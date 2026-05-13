@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoàng Văn Vinh - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">HV</div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Trang chủ</a></li>
+                <li><a href="#about">Về tôi</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="leaves-container" id="leaves-container"></div>
+        <div class="hero-content">
+            <h1 class="hero-name">Hoàng Văn Vinh</h1>
+            <p class="hero-role">UI/UX Designer Student</p>
+            <p class="hero-tagline">"Thiết kế trải nghiệm đơn giản, hiệu quả và có cảm xúc"</p>
+            <a href="#contact" class="cta-button">Thuê tôi</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Về tôi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Sinh viên tại Đại học GDU</p>
+                    <p>Chuyên ngành: CNNT – Thiết kế Đồ họa Kỹ thuật số</p>
+                    <p>Hiện tại tập trung vào các dự án thiết kế UI/UX</p>
+                    <h3>Hướng nghiệp</h3>
+                    <p>Trở thành một nhà thiết kế UI/UX chuyên nghiệp</p>
+                    <h3>Kỹ năng</h3>
+                    <ul>
+                        <li>Figma</li>
+                        <li>Photoshop</li>
+                        <li>Adobe Illustrator</li>
+                    </ul>
+                    <h3>Sở thích cá nhân</h3>
+                    <ul>
+                        <li>Nghe nhạc</li>
+                        <li>Chơi game</li>
+                        <li>Đi bộ ngoài trời</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for profile image -->
+                    <div class="profile-placeholder">Ảnh đại diện</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Dự án</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="1">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300/FFA500/FFFFFF?text=Bookmark+Design" alt="Bookmark Design">
+                    </div>
+                    <div class="project-info">
+                        <h3>Bookmark Design</h3>
+                        <p>Thiết kế bookmark sáng tạo với phong cách thu hoạch.</p>
+                        <p><strong>Vai trò:</strong> Thiết kế chính</p>
+                    </div>
+                </div>
+                <div class="project-card" data-project="2">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300/FF4500/FFFFFF?text=3D+Model+Design" alt="3D Model Design">
+                    </div>
+                    <div class="project-info">
+                        <h3>3D Model Design</h3>
+                        <p>Mô hình 3D với chi tiết tinh tế và màu sắc ấm áp.</p>
+                        <p><strong>Vai trò:</strong> Thiết kế và mô hình hóa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Kỹ năng & Kinh nghiệm</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Figma</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h3>Photoshop</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h3>Adobe Illustrator</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h3>UI/UX Design</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Liên hệ</h2>
+            <div class="contact-content">
+                <p>Hãy liên hệ với tôi để thảo luận về các cơ hội hợp tác!</p>
+                <a href="mailto:hoangvanvinh8464@gmail.com" class="cta-button">Gửi email</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
