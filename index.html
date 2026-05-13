@@ -27,6 +27,7 @@
             <h1 class="hero-name">Hoàng Văn Vinh</h1>
             <p class="hero-role">UI/UX Designer Student</p>
             <p class="hero-tagline">"Thiết kế trải nghiệm đơn giản, hiệu quả và có cảm xúc"</p>
+            <p class="hero-intro">Tôi là một sinh viên thiết kế với niềm đam mê tạo ra các trải nghiệm người dùng trực quan và hấp dẫn. Với nền tảng vững chắc trong công cụ thiết kế và tư duy sáng tạo, tôi luôn tìm cách kết hợp nghệ thuật với công nghệ để giải quyết vấn đề thực tế.</p>
             <a href="#contact" class="cta-button">Thuê tôi</a>
         </div>
     </section>
@@ -34,29 +35,32 @@
     <section id="about" class="about">
         <div class="container">
             <h2>Về tôi</h2>
-            <div class="about-content">
-                <div class="about-text">
+            <div class="about-cards">
+                <div class="about-card">
+                    <h3>Giới thiệu cá nhân</h3>
                     <p>Sinh viên tại Đại học GDU</p>
                     <p>Chuyên ngành: CNNT – Thiết kế Đồ họa Kỹ thuật số</p>
                     <p>Hiện tại tập trung vào các dự án thiết kế UI/UX</p>
+                </div>
+                <div class="about-card">
                     <h3>Hướng nghiệp</h3>
                     <p>Trở thành một nhà thiết kế UI/UX chuyên nghiệp</p>
+                </div>
+                <div class="about-card">
                     <h3>Kỹ năng</h3>
                     <ul>
                         <li>Figma</li>
                         <li>Photoshop</li>
                         <li>Adobe Illustrator</li>
                     </ul>
+                </div>
+                <div class="about-card">
                     <h3>Sở thích cá nhân</h3>
                     <ul>
                         <li>Nghe nhạc</li>
                         <li>Chơi game</li>
                         <li>Đi bộ ngoài trời</li>
                     </ul>
-                </div>
-                <div class="about-image">
-                    <!-- Placeholder for profile image -->
-                    <div class="profile-placeholder">Ảnh đại diện</div>
                 </div>
             </div>
         </div>
@@ -78,7 +82,7 @@
                 </div>
                 <div class="project-card" data-project="2">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/400x300/FF4500/FFFFFF?text=3D+Model+Design" alt="3D Model Design">
+                        <img src="https://via.placeholder.com/400x300/FF8C00/FFFFFF?text=3D+Model+Design" alt="3D Model Design">
                     </div>
                     <div class="project-info">
                         <h3>3D Model Design</h3>
@@ -89,6 +93,19 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <h3 id="modal-title"></h3>
+                <div id="modal-gallery" class="modal-gallery"></div>
+                <p id="modal-description"></p>
+                <p id="modal-role"></p>
+            </div>
+        </div>
+    </div>
 
     <section id="skills" class="skills">
         <div class="container">
@@ -126,8 +143,9 @@
         <div class="container">
             <h2>Liên hệ</h2>
             <div class="contact-content">
-                <p>Hãy liên hệ với tôi để thảo luận về các cơ hội hợp tác!</p>
-                <a href="mailto:hoangvanvinh8464@gmail.com" class="cta-button">Gửi email</a>
+                <p>Sẵn sàng thảo luận về các cơ hội hợp tác và dự án thú vị?</p>
+                <p>Hãy liên hệ với tôi để bắt đầu cuộc trò chuyện!</p>
+                <a href="mailto:hoangvanvinh8464@gmail.com" class="cta-button">Thuê tôi</a>
             </div>
         </div>
     </section>

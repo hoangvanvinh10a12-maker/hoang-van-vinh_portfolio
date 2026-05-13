@@ -1,18 +1,17 @@
 /* CSS Variables for Themes */
 :root {
-    --primary-yellow: #FFA500;
+    --primary-yellow: #F4E4BC;
     --primary-orange: #FF8C00;
-    --primary-red: #DC143C;
     --bg-light: #FFF8DC;
-    --bg-dark: #2F1B14;
-    --text-light: #2F1B14;
+    --bg-dark: #2F2F2F;
+    --text-light: #2F2F2F;
     --text-dark: #FFF8DC;
-    --nav-bg-light: rgba(255, 255, 255, 0.9);
-    --nav-bg-dark: rgba(47, 27, 20, 0.9);
+    --nav-bg-light: rgba(255, 248, 220, 0.95);
+    --nav-bg-dark: rgba(47, 47, 47, 0.95);
     --section-bg-light: #FFFFFF;
-    --section-bg-dark: #3D2B1F;
-    --border-light: #FFE4B5;
-    --border-dark: #5D4037;
+    --section-bg-dark: #3D3D3D;
+    --border-light: #F4E4BC;
+    --border-dark: #5D5D5D;
 }
 
 /* Light Mode */
@@ -57,7 +56,7 @@ body {
 
 /* Navigation */
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     background-color: var(--nav-bg);
@@ -119,7 +118,7 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--primary-yellow), var(--primary-orange), var(--primary-red));
+    background: linear-gradient(135deg, var(--bg-light), var(--primary-yellow), var(--primary-orange));
 }
 
 .leaves-container {
@@ -133,9 +132,10 @@ body {
 
 .leaf {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: var(--primary-red);
+    width: 15px;
+    height: 15px;
+    background-color: var(--primary-yellow);
+    opacity: 0.6;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     animation: fall linear infinite;
 }
@@ -143,10 +143,10 @@ body {
 @keyframes fall {
     0% {
         transform: translateY(-100px) rotate(0deg);
-        opacity: 1;
+        opacity: 0.6;
     }
     100% {
-        transform: translateY(100vh) rotate(360deg);
+        transform: translateY(100vh) rotate(180deg);
         opacity: 0;
     }
 }
@@ -172,14 +172,21 @@ body {
 
 .hero-tagline {
     font-size: 1.2rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-style: italic;
+}
+
+.hero-intro {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    line-height: 1.6;
 }
 
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: var(--primary-red);
+    background-color: var(--primary-orange);
     color: white;
     text-decoration: none;
     border-radius: 30px;
@@ -189,7 +196,8 @@ body {
 }
 
 .cta-button:hover {
-    background-color: var(--primary-orange);
+    background-color: var(--primary-yellow);
+    color: var(--text-light);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
@@ -213,47 +221,36 @@ h2 {
 }
 
 /* About Section */
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-.about-text {
-    flex: 1;
+.about-card {
+    background-color: var(--section-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.about-text h3 {
-    margin-top: 30px;
-    margin-bottom: 10px;
-    color: var(--primary-red);
+.about-card:hover {
+    transform: translateY(-5px);
 }
 
-.about-text ul {
+.about-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-orange);
+}
+
+.about-card ul {
     list-style: none;
     padding-left: 0;
 }
 
-.about-text li {
+.about-card li {
     margin-bottom: 5px;
-}
-
-.about-image {
-    flex: 1;
-    text-align: center;
-}
-
-.profile-placeholder {
-    width: 300px;
-    height: 300px;
-    background-color: var(--primary-yellow);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    color: var(--text-color);
-    margin: 0 auto;
 }
 
 /* Projects Section */
@@ -273,7 +270,7 @@ h2 {
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
@@ -305,7 +302,7 @@ h2 {
 
 .skill-item h3 {
     margin-bottom: 20px;
-    color: var(--primary-red);
+    color: var(--primary-orange);
 }
 
 .progress-bar {
@@ -400,14 +397,55 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Section Reveal Animation */
-section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
 }
 
-section.reveal {
-    opacity: 1;
-    transform: translateY(0);
+.modal-content {
+    background-color: var(--section-bg);
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+}
+
+.close {
+    color: var(--text-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--primary-orange);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-gallery {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+.modal-gallery img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
 }
