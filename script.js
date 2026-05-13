@@ -19,6 +19,14 @@ const leavesContainer = document.getElementById('leaves-container');
 function createLeaf() {
     const leaf = document.createElement('div');
     leaf.classList.add('leaf');
+    
+    // Randomly assign foreground or background
+    if (Math.random() > 0.5) {
+        leaf.classList.add('foreground');
+    } else {
+        leaf.classList.add('background');
+    }
+    
     leaf.style.left = Math.random() * 100 + 'vw';
     leaf.style.animationDuration = Math.random() * 5 + 5 + 's'; // Slower
     leaf.style.animationDelay = Math.random() * 3 + 's';

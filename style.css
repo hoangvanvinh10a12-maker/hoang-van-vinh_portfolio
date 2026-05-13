@@ -2,6 +2,7 @@
 :root {
     --primary-yellow: #F4E4BC;
     --primary-orange: #FF8C00;
+    --primary-red: #DC143C; /* Only for hero name */
     --bg-light: #FFF8DC;
     --bg-dark: #2F2F2F;
     --text-light: #2F2F2F;
@@ -118,7 +119,7 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--bg-light), var(--primary-yellow), var(--primary-orange));
+    background: linear-gradient(135deg, #FFF8DC, #F4E4BC, #FFE4B5, #FF8C00);
 }
 
 .leaves-container {
@@ -132,21 +133,37 @@ body {
 
 .leaf {
     position: absolute;
-    width: 15px;
-    height: 15px;
     background-color: var(--primary-yellow);
-    opacity: 0.6;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     animation: fall linear infinite;
 }
 
+.leaf.foreground {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.leaf.background {
+    width: 15px;
+    height: 15px;
+    opacity: 0.4;
+    filter: blur(1px);
+    z-index: 1;
+}
+
 @keyframes fall {
     0% {
-        transform: translateY(-100px) rotate(0deg);
+        transform: translateY(-100px) rotate(0deg) translateX(0px);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(50vh) rotate(90deg) translateX(20px);
         opacity: 0.6;
     }
     100% {
-        transform: translateY(100vh) rotate(180deg);
+        transform: translateY(100vh) rotate(180deg) translateX(-10px);
         opacity: 0;
     }
 }
@@ -161,7 +178,30 @@ body {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: var(--primary-red);
+    text-shadow: 
+        0 0 5px var(--primary-orange),
+        0 0 10px var(--primary-orange),
+        0 0 15px var(--primary-orange),
+        0 0 20px var(--primary-orange);
+    animation: shimmer 2s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+    0% {
+        text-shadow: 
+            0 0 5px var(--primary-orange),
+            0 0 10px var(--primary-orange),
+            0 0 15px var(--primary-orange),
+            0 0 20px var(--primary-orange);
+    }
+    100% {
+        text-shadow: 
+            0 0 10px var(--primary-orange),
+            0 0 20px var(--primary-orange),
+            0 0 30px var(--primary-orange),
+            0 0 40px var(--primary-orange);
+    }
 }
 
 .hero-role {
