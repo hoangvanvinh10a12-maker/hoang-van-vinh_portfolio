@@ -20,24 +20,27 @@ function createLeaf() {
     const leaf = document.createElement('div');
     leaf.classList.add('leaf');
     
-    // Randomly assign foreground or background
-    if (Math.random() > 0.5) {
+    // Randomly assign layer
+    const rand = Math.random();
+    if (rand > 0.7) {
         leaf.classList.add('foreground');
+    } else if (rand > 0.4) {
+        leaf.classList.add('midground');
     } else {
         leaf.classList.add('background');
     }
     
     leaf.style.left = Math.random() * 100 + 'vw';
-    leaf.style.animationDuration = Math.random() * 5 + 5 + 's'; // Slower
-    leaf.style.animationDelay = Math.random() * 3 + 's';
+    leaf.style.animationDuration = Math.random() * 5 + 8 + 's'; // Even slower
+    leaf.style.animationDelay = Math.random() * 5 + 's';
     leavesContainer.appendChild(leaf);
 
     setTimeout(() => {
         leaf.remove();
-    }, 10000); // Longer duration
+    }, 15000); // Longer duration
 }
 
-setInterval(createLeaf, 500); // Less frequent
+setInterval(createLeaf, 600); // Slightly less frequent
 
 // Hero Entrance Animation
 window.addEventListener('load', () => {
